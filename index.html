@@ -1,0 +1,475 @@
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.css" />
+    <style>
+        * {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Microsoft JhengHei", "Noto Sans TC", "PingFang TC", "Apple LiGothic Medium", Roboto, "Lucida Grande", "Lucida Sans Unicode", sans-serif;
+            background-color: #eeeeed;
+        }
+
+        a {
+            color: #2d2d2d;
+            text-decoration: none;
+            border-bottom: 1px solid #c71b0a;
+        }
+
+        header,
+        article>header {
+            max-width: calc(270/320*100%);
+            margin: 0 auto;
+        }
+
+        @media screen and (min-width: 768px) and (max-width: 1023px) {
+            header {
+                width: 678px;
+            }
+
+            article,
+            article>header {
+                max-width: 678px;
+                margin: 0 auto;
+            }
+        }
+
+        @media screen and (min-width: 1024px) {
+            header {
+                width: 900px;
+            }
+
+            article,
+            article>header {
+                max-width: 900px;
+                margin: 0 auto;
+            }
+        }
+
+        header>table {
+            width: 100%;
+			background-color:#eeeeed;
+        }
+
+        article>header>span {
+            font-size: 16px;
+            font-weight: bold;
+            line-height: 2.25;
+        }
+
+        article>header>h1 {
+            margin-top: 11px;
+            font-size: 34px;
+            font-weight: bold;
+            line-height: 1.32;
+        }
+
+        article {
+            color: #2d2d2d;
+        }
+
+        article>figure {
+            margin: 40px 0 0 0;
+        }
+
+        @media screen and (min-width: 768px) and (max-width: 1023px) {
+            article>figure {
+                width: 678px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .float-right {
+                float: left;
+                width: 300px;
+                margin-top: 40px;
+                margin-right: 40px;
+                margin-bottom: 50px;
+            }
+        }
+
+        @media screen and (min-width: 1024px) {
+            article>figure {
+                width: 900px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .float-right {
+                float: right;
+                width: 360px;
+                margin-top: 40px;
+                margin-left: 40px;
+                margin-bottom: 50px;
+            }
+        }
+
+        article>p,
+        article>h2,
+        article>blockquote,
+        article>ul,
+        article figcaption,
+        article>div,
+        article>header {
+            max-width: calc(270/320*100%);
+            margin: 0 auto;
+        }
+
+        @media screen and (min-width: 768px) and (max-width: 1023px) {
+            article>p,
+            article>h2,
+            article>blockquote,
+            article>ul,
+            article figcaption,
+            article>div,
+            article>header,
+            article>ul {
+                width: 550px;
+            }
+        }
+
+        @media screen and (min-width: 1024px) {
+            article>p,
+            article>h2,
+            article>blockquote,
+            article>ul,
+            article figcaption,
+            article>div,
+            article>header {
+                max-width: 756px;
+            }
+            article>ul {
+                width: 700px;
+            }
+        }
+
+        article>ul {
+            width: 100%;
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        article video,
+        article audio {
+            margin-top: 40px;
+            width: 100%;
+        }
+
+        article>p,
+        article>blockquote {
+            font-size: 18px;
+            line-height: 2.0;
+            letter-spacing: 0.9px;
+            margin-top: 40px;
+        }
+
+        article>blockquote {
+            padding-left: 21px;
+            color: #6d6d6d;
+            border-left: 1px solid #6d6d6d;
+        }
+
+        article>h2 {
+            font-size: 22px;
+            font-weight: bold;
+            letter-spacing: 1.1px;
+            line-height: 1.64;
+            margin-top: 40px;
+        }
+
+        article figcaption {
+            font-size: 16px;
+            line-height: 1.5;
+            letter-spacing: 0.8px;
+            color: #6d6d6d;
+            margin-top: 15px;
+        }
+
+        .header {
+            margin-top: 17px;
+            margin-bottom: 17px;
+        }
+
+        .logo {
+            width: 100px;
+            height: 31px;
+                    }
+
+        .menu {
+            width: 31px;
+            height: 31px;
+                   }
+
+        .author {
+            margin-right: 30px;
+            font-size: 15px;
+            line-height: 2.25;
+        }
+
+        .introduction {
+            font-size: 22px;
+            line-height: 1.82;
+            letter-spacing: 1.6px;
+            text-align: justify;
+            margin-top: 30px;
+        }
+
+        .related-text {
+            font-size: 16px;
+            line-height: 2.25;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .related-items {
+            margin-bottom: 60px;
+        }
+
+        .related-item {
+            background-color: #e1e1e1;
+            margin-top: 20px;
+            padding: 20px;
+            cursor: pointer;
+        }
+
+        .related-item>img {
+            width: 20%;
+            vertical-align: middle;
+        }
+
+        .related-item>div {
+            display: inline-block;
+            width: 70%;
+            padding-left: 20px;
+            vertical-align: middle;
+            line-height: 1.5;
+        }
+
+        footer {
+            background-color: #bfbfbf;
+            min-height: 300px;
+        }
+
+        footer>table {
+            border-spacing: 45px;
+            width: 100%;
+        }
+
+        .footer-circle1 {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background-color: #397a69;
+            margin: 0 auto;
+        }
+
+		.footer-circle2 {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background-color: #cc8e24;
+            margin: 0 auto;
+        }
+
+		.footer-circle3 {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background-color: #781c20;
+            margin: 0 auto;
+        }
+
+        .footer-text {
+            margin-top: 15px;
+            font-size: 18px;
+            text-align: center;
+            color: #777;
+        }
+
+        .embed-box {
+            position: relative;
+            margin-top: 60px;
+        }
+        .embed-box > iframe {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+
+
+        @media screen and (max-width: 767px) {
+            table.hidden-on-mobile {
+                display: none;
+            }
+
+            table.shown-on-mobile {
+                display: table;
+            }
+        }
+
+        @media screen and (min-width: 768px) {
+            table.hidden-on-mobile {
+                display: table;
+                max-width: 770px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            table.shown-on-mobile {
+                display: none;
+            }
+        }
+		.flex-footer{
+			display:flex;
+			justify-content:space-between;
+		}
+    </style>
+
+</head>
+
+<body>
+    <header class="header">
+        <table>
+            <tbody>
+                <tr>
+                    <td>
+                        <div class="logo"><img src="長版-01.png" alt="logo7pupu" class="logo"/>
+						</div>
+                    </td>
+                    <td style="width:22px;">
+                        <div class="menu"><img src="右邊按鈕-01.png" alt="bottom7pupu" class="menu"/></div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </header>
+<div style="background-color:#b5b6b6">
+    <article>
+        <header>
+		<h1 style="padding-top:40px">剖悉童年創傷　《胎變》反思家庭價值</h1>
+        </header>
+        <div style="margin-bottom:15px">
+            <span class="author">圖、文／
+                <b>
+                    <a>翁芊儒</a>
+                </b>
+            </span>
+        </div>
+
+        <div>
+            <img src="i5.jpeg" alt="leading image of this article" width="100%" />
+        </div>
+        <p>
+           一團團變異腫瘤散佈在白色的牆面上，寫實擬真的外型乍看下就似子宮內血淋淋的胚胎。國立清華大學藝術教育與創作研究所學生鄭迺蓁，25日於「邸家Dejia」舉行《胎變》創作個展。藉由具受精缺陷的「葡萄胎」依附母體而生，至脫離陣痛的過程，隱喻鄭迺蓁從病態家庭關係中自我修復，並反思現代家庭的定義。
+        </p>
+        <div style="width:100%">
+            <div style="margin-top:40px">
+            <img src="圖1.jpeg" alt="胎變圖片1" width="100%" />
+        </div>
+        <figcaption>運用塑料製成子宮內的變異腫瘤「葡萄胎」，象徵病態家庭關係。
+        </figcaption>
+        </div>
+        <p>
+            「腫瘤有一種病態的美。」鄭迺蓁表示，寫實呈現醜陋的癌細胞與腫瘤，像揭開她家庭中的衝突。她認為，自己與家人的互動建立在物質而非心靈，家裡的成員似活在自己小空間、缺乏交流。而母親典型傳統婦女的形象，一方面為她樹立不可動搖的舊時代價值觀，一方面卻又期待她擁有自己的人生，「我一直活在我媽的矛盾裡。」
+        </p>
+        <div style="margin-top:40px">
+            <img src="圖2.jpeg" alt="胎變圖片2" width="100%" />
+            <figcaption>展場作品大多以熱熔膠、保麗膠、樹酯與壓克力顏料製成。</figcaption>
+        </div>
+        <p>
+            《母親的眼》系列作品中，鄭迺蓁希望用母親的視角觀看自己的童年。她利用賽璐璐片輸出照片並鑲在腫瘤中，再用LED燈將此透明影像染色、呈現童年的回憶。《脫離陣痛》系列則由一群依附牆面的腫瘤構成，象徵依附母體孕育的生命。鄭迺蓁剖悉自己幼時缺乏母愛，並認知自己對親密關係的渴望。她表示，儘管脫離過程需要一段「陣痛期」，但仍期許自己擺脫原生家庭的影響。
+        </p>
+       <div style="width:100%">
+            <div style="margin-top:40px">
+            <img src="圖3.jpeg" alt="胎變圖片3" width="100%" />
+        </div>
+        <figcaption>鄭迺蓁利用賽璐璐片輸出照片並鑲在腫瘤中，再用led燈將此透明影像染色、呈現童年的回憶。
+        </figcaption>
+        </div>
+        <p>
+            一張實體大紅桌與數張椅子形成辦桌場面。《圓系列—盤中飧》中呈現婚喪喜慶時，傳統家庭的團聚光景。桌面的碗中放置照片，則象徵短暫團聚時、親人一同咀嚼往日回憶。然而，疏離的親屬關係在片刻的相聚時光後，就如同吃完的辦桌，打包帶走。鄭迺蓁以此諷刺傳統家庭「團聚」徒留形式，且在以小家庭為主的現代更明顯。儘管作品充滿對傳統家庭概念的質疑，但鄭迺蓁提到，佈展過程中也有收穫，「圓桌是我媽媽幫我找來的。」籌備期間她也一邊修復自身的家庭關係。 
+        </p>
+        <div style="width:100%">
+            <div style="margin-top:40px">
+            <img src="圖4.jpeg" alt="胎變圖片4" width="100%" />
+        </div>
+        <figcaption>一張實體大紅桌與數張椅子形成辦桌場面，象徵短暫團聚時、親人一同咀嚼往日回憶。
+        </figcaption>
+        </div>
+        <p>展場作品大多以熱熔膠、保麗膠、樹酯與壓克力顏料製成。「把以前使用熱熔膠的經驗重新結合創作。」民國八零年代許多工廠外移，鄭迺蓁的母親失業後從事家庭代工，國中時鄭迺蓁也常在旁協助。「當時對這個東西厭煩也恐懼。」鄭迺蓁坦言，當時覺得這是卑微的工作，深怕他人將自己定義為貧窮。經過多年後重新運用熱熔膠與塑料，心境已然成熟許多，「是那段經歷把我帶到這個地方。」
+         </p>
+		 <p>創作主題《胎變》源自於王文興的小說《家變》。鄭迺蓁藉小說欲打破當代人對傳統家庭的想像，隱喻原生家庭遵循上一代傳統價值，與新世代觀念間的衝突。「家庭的定義值得大家去思考。」傳統家庭的倫理價值隨著時代而改變，鄭迺蓁希望參展者思考自己與家人的互動關係，並重新定義家庭價值。
+		</p>
+        
+
+        <div class="related-text" style="clear:both;margin-top:40px;margin-bottom:20px;">延伸閱讀</div>
+        
+		<ul class="related-items" style="padding-bottom:40px">
+            <li class="related-item">
+                <img src="溫叨.jpeg"></img>
+                <div>延伸閱讀一：《溫叨》連結青銀　盼藝術在地生根</div>
+            </li>
+            <li class="related-item">
+                <img src="月亮.jpeg"></img>
+                <div>延伸閱讀二：《月亮媽媽》重現　童趣手法詮釋死亡</div>
+            </li>
+        </ul>
+		
+    </article>
+	</div>
+    <footer style="background-color:#eeeeed">
+        <table class="shown-on-mobile">
+            <tbody>
+                <tr>
+                    <td>
+                        <div class="footer-circle1"></div>
+                        <div class="footer-text">關於我們</div>
+                    </td>
+                    <td>
+                        <div class="footer-circle2"></div>
+                        <div class="footer-text">聯絡我們</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="footer-circle3"></div>
+                        <div class="footer-text">多媒體專題</div>
+                    </td>
+                    <td>
+                        <div class="footer-circle1"></div>
+                        <div class="footer-text">個人作品</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="hidden-on-mobile">
+            <tbody>
+                <tr>
+                    <td>
+                        <div class="footer-circle1"></div>
+                        <div class="footer-text">關於我們</div>
+                    </td>
+                    <td>
+                        <div class="footer-circle2"></div>
+                        <div class="footer-text">聯絡我們</div>
+                    </td>
+                    <td>
+                        <div class="footer-circle3"></div>
+                        <div class="footer-text">多媒體專題</div>
+                    </td>
+                    <td>
+                        <div class="footer-circle1"></div>
+                        <div class="footer-text">個人作品</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </footer>
+</body>
+
+</html>
